@@ -62,7 +62,18 @@ function call() {
     console.log(`Using video device: ${videoTracks[0].label}`);
   }
   // Create an RTCPeerConnection via the polyfill.
-  const servers = null;
+  const servers = {
+  iceServers: [
+    {
+      urls: [
+        "turn:turn.sondc.dev"
+      ],
+      username: "usr",
+      credential: "passwd"
+    }
+  ],
+  iceTransportPolicy: "relay"
+};
   pc1Local = new RTCPeerConnection(servers);
   pc1Remote = new RTCPeerConnection(servers);
   pc1Remote.ontrack = gotRemoteStream1;
