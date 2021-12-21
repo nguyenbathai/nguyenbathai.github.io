@@ -68,8 +68,8 @@ function call() {
       urls: [
         "turn:turn.sondc.dev"
       ],
-      username: "usr",
-      credential: "passwd"
+      username: "test",
+      credential: "test123"
     }
   ],
   iceTransportPolicy: "relay"
