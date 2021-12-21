@@ -42,8 +42,7 @@ function start() {
   startButton.disabled = true;
   navigator.mediaDevices
       .getUserMedia({
-        audio: true,
-        video: false
+        audio: true
       })
       .then(gotStream)
       .catch(e => console.log('getUserMedia() error: ', e));
