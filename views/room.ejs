@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const USER_NAME = prompt("Enter your name", "YG Unknown")
+    const ROOM_ID = "<%= roomId %>"
+    const USER_ID = "<%= userId %>"
+  </script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/simple-peer/simplepeer.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>YG RTC test</title>
+  <style>
+    body {
+      padding: 10px;
+    }
+
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-auto-rows: 300px;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #outgoing {
+      width: 600px;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+
+    .chat-box {
+      height: 400px;
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    .chat-content {
+      height: 350px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chat-box">
+    <form>
+      <textarea id="chatbox"></textarea>
+      <button type="submit">submit</button>
+    </form>
+    <div class="chat-content" id="chat-content">
+    </div>
+  </div>
+
+  <div id="video-grid"></div>
+</body>
+
+</html>
